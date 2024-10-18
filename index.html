@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PokéMatrimonio (Reloaded)</title>
+
+    <link href="./src/css2" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="./src/jspdf.umd.min.js.descarga"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo Centrado -->
+      <div class="logo-container">
+        <img
+          src="./src/Picsart-24-10-14-13-33-08-885.jpg"
+          alt="Logo"
+          id="logo"
+        />
+      </div>
+
+      <!-- Formulario de Selección -->
+      <div class="form-container">
+        <div class="dropdown-container">
+          <label for="pokemon"
+            >Selecciona un Pokémon
+            <span class="required-indicator">*</span></label
+          >
+          <select id="pokemon" name="pokemon" required="">
+            <option value="">-- Selecciona un Pokémon --</option>
+            <option value="custom">Mi Pokémon no está en la lista</option>
+            <option value="arceus">Arceus</option>
+            <option value="slaking">Slaking</option>
+            <option value="rapidash">Rapidash</option>
+            <option value="octillery">Octillery</option>
+            <option value="ursaring">Ursaring</option>
+            <option value="typhlosion">Typhlosion</option>
+            <option value="gardevoir">Gardevoir</option>
+            <option value="hypno">Hypno</option>
+            <option value="mew">Mew</option>
+            <option value="mewtwo">Mewtwo</option>
+            <option value="vaporeon">Vaporeon</option>
+            <option value="Umbreon">Umbreon</option>
+            <option value="Glaceon">Glaceon</option>
+            <option value="sylveon">Sylveon</option>
+            <option value="braixen">Braixen</option>
+            <option value="delphox">Delphox</option>
+            <option value="primarina">Primarina</option>
+            <option value="cinderace">Cinderace</option>
+            <option value="meowscarada">Meowscarada</option>
+          </select>
+        </div>
+
+        <div id="customNameContainer" class="input-container hidden">
+          <label for="pokemonCustom"
+            >Nombre o número del Pokémon
+            <span class="required-indicator">*</span></label
+          >
+          <input
+            type="text"
+            id="pokemonCustom"
+            name="pokemonCustom"
+            required=""
+          />
+          <small class="small-input-text"
+            >Si el Pokémon no se encuentra, intenta usar el número de
+            Pokédex</small
+          >
+        </div>
+      </div>
+
+      <button type="button" id="searchBtn" class="search-btn">
+        Buscar Pokémon
+      </button>
+
+      <div id="additionalDataForm" class="form-container hidden">
+        <div class="input-container">
+          <label for="pokemonNick">Mote del Pokémon (Opcional)</label>
+          <input type="text" id="pokemonNick" name="pokemonNick" required="" />
+        </div>
+
+        <div class="input-container">
+          <label for="humanName"
+            >Nombre del Humano <span class="required-indicator">*</span></label
+          >
+          <input type="text" id="humanName" name="humanName" required="" />
+        </div>
+
+        <div class="dropdown-container">
+          <label for="region"
+            >Selecciona una región para el acta
+            <span class="required-indicator">*</span></label
+          >
+          <select id="region" name="region" required="">
+            <option value="">-- Selecciona una región --</option>
+            <option value="kanto">Kanto</option>
+            <option value="johto">Johto</option>
+            <option value="hoenn">Hoenn</option>
+            <option value="sinnoh">Sinnoh</option>
+            <option value="unova">Unova</option>
+            <option value="kalos">Kalos</option>
+            <option value="alola">Alola</option>
+            <option value="galar">Galar</option>
+            <option value="paldea">Paldea</option>
+          </select>
+        </div>
+
+        <div class="dropdown-container">
+          <label for="customDate">Selecciona una fecha (Opcional)</label>
+          <input id="customDate" name="customDate" type="date" />
+        </div>
+      </div>
+
+      <div id="pokemonData" class="pokemon-data hidden">
+        <img id="pokemonDataSprite" src="" alt="Sprite" />
+        <h4 id="pokemonDataName" class="pokemon-data__name">No Found</h4>
+      </div>
+
+      <div id="loadingData" class="loading-data hidden">
+        <h4>Buscando...</h4>
+      </div>
+
+      <!-- Acta de Matrimonio -->
+      <div id="acta" class="acta">
+        <!-- El contenido del acta se generará aquí -->
+      </div>
+
+      <!-- Botones -->
+      <div id="buttonGenerateContainer" class="buttons-container hidden">
+        <button type="button" id="generateBtn" class="generate-btn">
+          Generar Acta
+        </button>
+      </div>
+    </div>
+
+    <script src="./src/main.js"></script>
+  </body>
+</html>
