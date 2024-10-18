@@ -73,9 +73,9 @@ async function searchPokemon() {
     pokemonToMarry = data;
     pokemonDataDiv.classList.remove("hidden");
     pokemonDataSprite.src = pokemonToMarry?.sprites?.front_default;
-    pokemonDataName.innerText = capitalizeFirstLetter(
+    pokemonDataName.innerText = capitalizeEachWord(formatName(
       pokemonToMarry?.name || ""
-    );
+    ));
     additionalDataForm.classList.remove("hidden");
     buttonGenerateContainer.classList.remove("hidden");
   } catch (error) {
@@ -126,10 +126,10 @@ async function generateDoc() {
   const professorName = `Profesor Harkness`;
 
   // Pokemon name or nick
-  const officialPokemonName = capitalizeFirstLetter(pokemonToMarry.name);
-  let customPokemonName = capitalizeFirstLetter(pokemonToMarry.name);
+  const officialPokemonName = capitalizeEachWord(formatName(pokemonToMarry.name));
+  let customPokemonName = capitalizeEachWord(formatName(pokemonToMarry.name));
   if (pokemonNick.value) {
-    customPokemonName = capitalizeFirstLetter(pokemonNick.value);
+    customPokemonName = capitalizeEachWord(formatName(pokemonNick.value));
   }
 
   // Create doc in HTML
@@ -139,7 +139,7 @@ async function generateDoc() {
     month
   )}, del año ${year}, se declara formalmente el matrimonio entre:</p>
     
-        <p><strong class="nombre-humano">${humanNameValue}</strong><br>
+        <p><strong class="nombre-humano">${capitalizeEachWord(formatName(humanNameValue))}</strong><br>
         Humano/a perteneciente a la región de ${region}.</p>
     
         <p><strong>${customPokemonName}</strong><br>
@@ -166,6 +166,19 @@ async function generateDoc() {
 // Capitalize first letter
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Replacee every '-' with space
+function formatName(name) {
+  return name.replace(/-/g, " ");
+}
+
+// Capitalize each word in a string
+function capitalizeEachWord(string) {
+  return string
+    .split(" ")
+    .map((word) => capitalizeFirstLetter(word))
+    .join(" ");
 }
 
 // Get month name by month number (0 - 11)
