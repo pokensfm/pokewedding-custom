@@ -42,9 +42,6 @@ selectedPokemon.addEventListener("change", (event) => {
 });
 
 async function searchPokemon() {
-  pokemonDataDiv.classList.add("hidden");
-  buttonGenerateContainer.classList.add("hidden");
-  loadingData.classList.remove("hidden");
   const selectedPokemonValue = selectedPokemon.value;
   const customSelectedPokemonValue = customSelectedPokemon.value;
   if (!selectedPokemonValue) {
@@ -63,6 +60,10 @@ async function searchPokemon() {
   } else {
     pokemonSearchQuery = selectedPokemonValue;
   }
+
+  pokemonDataDiv.classList.add("hidden");
+  buttonGenerateContainer.classList.add("hidden");
+  loadingData.classList.remove("hidden");
 
   try {
     const request = await fetch(

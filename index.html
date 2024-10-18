@@ -8,14 +8,14 @@
 
     <link href="./src/css2" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css" />
-    <script src="./src/jspdf.umd.min.js.descarga"></script>
+    <script src="./src/jspdf.umd.min.js"></script>
   </head>
   <body>
     <div class="container">
       <!-- Logo Centrado -->
       <div class="logo-container">
         <img
-          src="./src/Picsart-24-10-14-13-33-08-885.jpg"
+          src="./src/pokeweddinglogo.png"
           alt="Logo"
           id="logo"
         />
@@ -32,24 +32,42 @@
             <option value="">-- Selecciona un Pokémon --</option>
             <option value="custom">Mi Pokémon no está en la lista</option>
             <option value="arceus">Arceus</option>
-            <option value="slaking">Slaking</option>
-            <option value="rapidash">Rapidash</option>
-            <option value="octillery">Octillery</option>
-            <option value="ursaring">Ursaring</option>
-            <option value="typhlosion">Typhlosion</option>
+            <option value="absol">Absol</option>
+            <option value="braixen">Braixen</option>
+            <option value="charizard">Charizard</option>
+            <option value="cinderace">Cinderace</option>
+            <option value="delphox">Delphox</option>
+            <option value="espeon">Espeon</option>
+            <option value="flareon">Flareon</option>
+            <option value="garchomp">Garchomp</option>
             <option value="gardevoir">Gardevoir</option>
+            <option value="glaceon">Glaceon</option>
+            <option value="greninja">Greninja</option>
+            <option value="inteleon">Inteleon</option>
             <option value="hypno">Hypno</option>
+            <option value="jolteon">Jolteon</option>
+            <option value="leafeon">Leafeon</option>
+            <option value="lucario">Lucario</option>
+            <option value="lycanroc-dusk">Lycanroc Dusk</option>
+            <option value="lycanroc-midday">Lycanroc Midday</option>
+            <option value="lycanroc-midnight">Lycanroc Midnight</option>
+            <option value="meowscarada">Meowscarada</option>
             <option value="mew">Mew</option>
             <option value="mewtwo">Mewtwo</option>
-            <option value="vaporeon">Vaporeon</option>
-            <option value="Umbreon">Umbreon</option>
-            <option value="Glaceon">Glaceon</option>
-            <option value="sylveon">Sylveon</option>
-            <option value="braixen">Braixen</option>
-            <option value="delphox">Delphox</option>
+            <option value="octillery">Octillery</option>
             <option value="primarina">Primarina</option>
-            <option value="cinderace">Cinderace</option>
-            <option value="meowscarada">Meowscarada</option>
+            <option value="pikachu">Pikachu</option>
+            <option value="quaquaval">Quaquaval</option>
+            <option value="rapidash">Rapidash</option>
+            <option value="reshiram">Reshiram</option>
+            <option value="slaking">Slaking</option>
+            <option value="sylveon">Sylveon</option>
+            <option value="typhlosion">Typhlosion</option>
+            <option value="umbreon">Umbreon</option>
+            <option value="ursaring">Ursaring</option>
+            <option value="vaporeon">Vaporeon</option>
+            <option value="zoroark">Zoroark</option>
+            <option value="custom">Otro</option>
           </select>
         </div>
 
@@ -78,7 +96,7 @@
       <div id="additionalDataForm" class="form-container hidden">
         <div class="input-container">
           <label for="pokemonNick">Mote del Pokémon (Opcional)</label>
-          <input type="text" id="pokemonNick" name="pokemonNick" required="" />
+          <input type="text" id="pokemonNick" name="pokemonNick" />
         </div>
 
         <div class="input-container">
@@ -114,7 +132,9 @@
       </div>
 
       <div id="pokemonData" class="pokemon-data hidden">
-        <img id="pokemonDataSprite" src="" alt="Sprite" />
+        <div class="pokemon-data__sprite-container">
+          <img id="pokemonDataSprite" class="pokemon-data__sprite" src="" alt="Sprite" />
+        </div>
         <h4 id="pokemonDataName" class="pokemon-data__name">No Found</h4>
       </div>
 
